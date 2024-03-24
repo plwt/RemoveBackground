@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=RemoveBackground
+Comment=Removes image backgrounds for Linux
+Exec=/usr/bin/x-terminal-emulator -e "/opt/RemoveBackground/src/RemoveBackground.sh"
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/RemoveBackground/src/icon.png
+Categories=GNOME;GTK;Development;
+Name[en_GB]=RemoveBackground
