@@ -26,6 +26,8 @@ def removebackground():
 
     elif Gonogo=="y":
         
+        from pathlib import Path
+        home_path = str(Path.home())
         input_path = (home_path + '/RemoveBackground/image.jpg')
         output_path = (home_path + '/RemoveBackground/output.png')
 
