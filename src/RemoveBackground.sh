@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /opt/Removebackground
+cd /opt/RemoveBackground
 
 python3 -m venv venv
 source venv/bin/activate
