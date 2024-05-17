@@ -9,7 +9,7 @@ source venv/bin/activate
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade Pillow
 python3 -m pip install --upgrade pathlib
-python3 -m pip install --upgrae rembg
+python3 -m pip install --upgrade rembg
 
 # make folders
 mkdir -p ~/RemoveBackground
