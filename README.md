@@ -42,31 +42,26 @@ pip install rembg
 import cv2
 import numpy as np
 
-# Load the image
+#Load the image
 image = cv2.imread('input_image.jpg')
 
-# Convert to HSV color space
+#Convert to HSV color space
 hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
-# Define the range of background color in HSV
+#Define the range of background color in HSV
 lower = np.array([0, 0, 0])
 upper = np.array([179, 255, 100])
 
-# Create a mask for the background
+#Create a mask for the background
 mask = cv2.inRange(hsv, lower, upper)
 
-# Create a white image of the same size
+#Create a white image of the same size
 white_bg = np.zeros_like(image, dtype=np.uint8)
 white_bg[:] = (255, 255, 255)
 
-# Copy the non-background pixels from the original image
+#Copy the non-background pixels from the original image
 result = cv2.bitwise_and(image, image, mask=cv2.bitwise_not(mask))
 result = cv2.add(result, cv2.bitwise_and(white_bg, white_bg, mask=mask))
 
-# Save the result
+#Save the result
 cv2.imwrite('output_image.jpg', result)
-
-
-Replace `myenv` with the name you want to give to your virtual environment.
-
-After installing the `rembg` library, you can run the Python program.
