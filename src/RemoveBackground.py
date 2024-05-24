@@ -8,7 +8,7 @@ def remove_background(image_path):
             o.write(remove(i.read()))
 
 def main():
-    image_path = "/RemoveBackground/images/image.jpg"  # Replace with the path to your image file
+    image_path = "/opt/RemoveBackground/image.jpg"  # Replace with the path to your image file
     remove_background(image_path)
     print("Background removed successfully. The output image is saved as output.png in the same directory as the input image.")
 
