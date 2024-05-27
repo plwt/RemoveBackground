@@ -13,7 +13,7 @@ def remove_background(image_path):
     hmat,wmat = output.size
     background=Image.open("opt/RemoveBackground/background.png")
     resizebackground=background.resize((hmat,wmat))
-    resizebackground.paste(output,box=(0,0)background=output)
+    resizebackground.paste (output,box=(0,0),background=output)
     resizebackground.save(image_path + "complete.png")
 
 def main():
