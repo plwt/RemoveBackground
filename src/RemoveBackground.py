@@ -9,13 +9,29 @@ def remove_background(image_path):
     with open(image_path, 'rb') as i:
         with open(output_path, 'wb') as o:
             o.write(remove(i.read()))
-    output=Image.open("/opt/RemoveBackground/output.png")
-    hmat,wmat = output.size
-    background=Image.open("opt/RemoveBackground/background.png")
-    resizebackground=background.resize((hmat,wmat))
-    resizebackground.paste (output,box=(0,0),background=output)
-    resizebackground.save(image_path + "complete.png")
+    
+    # Open the images
+    output_image = Image.open("output.png")
+    background_image = Image.open("background.png")
 
+    # Resize the background image to match the output image size
+    background_image = background_image.resize(output_image.size)
+
+    # Create a new image with the same size as the output image
+    new_image = Image.new("RGB", output_image.size)
+
+    # Paste the background image onto the new image
+    new_image.paste(background_image, (0, 0))
+
+    # Paste the output image onto the new image
+    new_image.paste(output_image, (0, 0), output_image)
+
+    # Save the new image
+    new_image.save("combined_image.png")
+    
+    
+    
+    
 def main():
     image_path = "/opt/RemoveBackground/image.jpg"
     remove_background(image_path)
@@ -23,3 +39,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+

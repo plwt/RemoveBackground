@@ -10,7 +10,6 @@ python3 -m pip install --upgrade rembg
 
 # make folders
 mkdir -p ~/RemoveBackground
-mkdir /opt/RemoveBackground/images
 
 # run the script
 python3 /opt/RemoveBackground/src/RemoveBackground.py
